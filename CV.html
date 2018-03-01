@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,400,500" rel="stylesheet">
+<style>
+
+/*Universal*/
+
+*{
+
+}
+
+html {
+	font-size: 12pt;
+	--main-color: #6495ed;
+}
+
+/*'Comic Neue Angular'*/
+body {
+	background-color: #FFF;		
+	font-family:  'Roboto', sans-serif;
+	font-weight: 500	
+}
+
+h1 {
+	color:black;
+	font-weight: 500;
+	font-size:2rem;
+}
+
+h2, h3{
+	font-weight: 400;
+	
+}
+
+h3 {
+	font-size: 1.25rem;
+}
+
+p {
+	font-size:1rem;
+	font-weight: 300;
+
+}
+
+a {
+	text-decoration: none;
+	color:var(--main-color);
+	
+}
+
+a:hover {
+	filter: brightness(85%);
+}
+
+li {
+	list-style-type: square;
+	font-weight:  300;
+}
+
+
+
+/*Icons*/
+
+i {
+	color: var(--main-color);
+	vertical-align: middle;
+	font-size: 18pt;
+	width: 29px;
+	height: 29px;
+}
+
+
+.title i {
+	font-size: 48pt;
+	width: 80px;
+	height: 80px;
+	vertical-align: center;
+}
+
+.date i {
+	font-size:16pt;
+	width: 25px;
+	height: 25px;
+	vertical-align: center;
+}
+
+
+/*Container*/
+
+.container {
+	width: auto;
+	height:100%;
+	max-width: 1000px;
+	background-color: var(--main-color);
+	margin: auto;
+	border: solid var(--main-color) 10pt;
+}
+
+/*Grid*/
+
+.grid {
+	margin: 0 auto;
+	width: 100%;
+	display: grid;
+	grid-template-rows: 7.75fr 4fr;
+	grid-template-columns: 4fr 8fr;
+	grid-gap: 10px;
+	grid-template-areas:
+        "contact experience"
+        "skills education"
+}
+
+.box {
+	background-image: linear-gradient( 135deg, #F8F8F8 20%, #DCDCDC 100%);
+	box-shadow: 2px 2px 5px grey;
+	width: auto;
+}
+
+.box-container {
+	margin: 1.5%;
+	/*margin:10px*/;
+}
+
+.title {
+	display: block;
+	margin:0;
+	/*text-align: center;*/
+}
+
+.sub-title {
+	margin:0;
+}
+
+
+/*Contact Box*/
+
+.contact {
+	/*grid-area: 1 / 1 / 1 / 1;*/
+	grid-area: contact;
+}
+
+img {
+	width:100%;
+	height:auto;
+	display:block;
+}
+
+.contact-content {
+	padding: 10px;
+	display:inline-block;
+}
+
+.contact-content p {
+	font-weight: 500;
+}
+
+#blurb {
+	font-weight: 300;
+	line-height: 1.5;
+}
+
+
+/*Experience Box*/
+
+.experience {
+	/*grid-area: 1 / 2 / 1 / 3;*/
+	grid-area: experience;
+	padding: 10px;*/
+}
+
+.job {
+	margin-bottom: 15px;
+}
+
+.job a {
+	font-weight: 500;
+	padding-left: 20px;
+	line-height: 2;
+}
+
+.date-location {
+	font-style: italic;
+	height: 25px;
+	margin: 5px;
+	padding: 0px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.job-title {
+	padding:0px;
+	margin: 0px;
+
+}
+.experience-list {
+	margin: 0px 0px;
+	font-weight: 300;
+}
+
+.full-resume {
+	text-align: center;
+}
+
+
+/*Skills Box*/
+
+.skills {
+	/*grid-area: 2 / 1 / 3 / 1;*/
+	grid-area: skills;
+	padding: 10px;
+}
+
+
+/*Education Box*/
+
+.education {
+	/*grid-area: 2 / 2 / 3 / 3 /;*/
+	grid-area: education;
+	padding:10px;
+}
+
+
+.education-grid {
+	display: grid;
+	margin: 0px;
+	padding: 0px;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr;
+	grid-template-areas: "box1 box2"
+}
+
+.education-content {
+	grid-area: box1;
+
+}
+.courses {
+	grid-area: box2;
+	
+}
+
+
+/*Footer*/
+
+footer {
+	background-color: var(--main-color);
+	border: solid var(--main-color) 2pt;
+	text-align:center;
+	margin: auto;
+	max-width: 1000px;
+	height: 50px;
+	padding: 10px;
+}
+
+.fa {
+	display:inline-block;
+	color:#FFF;
+	padding:10px;
+	font-size: 30px;
+}
+
+
+/*Mobile*/
+
+@supports (display: grid) {
+  @media only screen and (max-width: 480px), (orientation: portrait) {
+
+.grid {
+	margin: auto;
+	width: auto;
+	display: grid;
+	grid-template-rows: 1fr auto auto auto;
+	grid-template-columns: 2fr;
+	grid-gap: 10px;
+	grid-template-areas:
+        "contact" 
+        "experience"
+        "skills" 
+        "education"
+}
+
+.education-grid {
+	display: grid;
+	padding:0;
+	grid-template-columns: 1fr;
+	grid-template-rows: 1fr 1fr;
+	grid-template-areas: 
+		"box1"
+		"box2"
+
+
+}
+
+}
+
+
+</style>
+		
+</head>
+	<body>
+		<div class="container">
+
+			<!-- Grid -->
+			<div class="grid">
+				
+
+				<!--Left Side-->
+	<div class="contact box">
+		<img id="image" src="square2.jpg">
+			<div class="contact-content">
+				<h1>Dylan Connor</h1>
+					<p><i class="material-icons">work</i>Front End Developer</p>
+					<p><i class="material-icons">place</i>Belfast, N. Ireland</p>
+					<p><i class="material-icons">email</i>DylanJConnor4@gmail.com</p>
+					<p><i class="material-icons">phone</i>(+44) 07-454-036-7232</p>
+					<hr>
+					<p id="blurb"> Hey! Welcome to my Web CV. I am an aspiring front end developer keen on working to help small businesses grow. I am experienced in HTML5, CSS3, PHP, and JavaScript. I am also skilled in audio and video production. I am an American-Irish dual citizen living in Belfast. Feel free to contact me if you would like to work or chat!</p>
+			</div>
+				
+	</div>
+
+
+
+	<div class="education box">
+		<h1 class="title"><i class="material-icons">school</i>Education</h1>
+		<hr>
+			<div class="box-container">
+				<div class="education-grid">
+			
+			<div class="education-content">
+					<h2 class="sub-title">Northeastern University</h2>
+					<p>September 2012 - May 2017</p>
+					<p>Bachelor of Science in Music Industry</p>
+					<p>Minor in Business Administration</p>
+					<p>GPA: 3.2</p>
+					<p>Transcript</p>
+					</div>
+
+				<div class="courses">
+					<h2 class="sub-title">Relevant Courses</h2>
+					<p>Microsoft Excel 101</p>
+					<p>Codecademy: Learn HTML/CSS</p>
+					<p>Udemy: Become a WordPress Developer (In Progress)</p>
+					<p>Udemy: The Web Developer Bootcamp (In Progress)</p>
+					<p>Music Recording</p>
+					<p>Sound Design</p>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+<!--Right Side-->
+	<div class="experience box">
+			<h1 class="title"><i class="material-icons">work</i>Work Experience</h1>
+			<hr>
+	<div class="box-container">
+		<div class="job">
+			<h3 class="sub-title">Verify Recruitment - Head of Content</h3>
+			<div class="date-location">
+				<h4 class="date"><i class="material-icons">insert_invitation</i>September 2017 - Present</h4>
+				<h4 class="location">Dublin, IE</h4>
+			</div>
+			
+				<ul class="experience-list"> 
+					<li>Interviewed, wrote and edited 30+ articles on tech employees for new digital magazine Otia.io</li>
+					<li>Edited photographs for the website using Adobe Photoshop; Updated and edited website using WordPress</li>
+					<li>Created publishing schedules for all content; Followed SEO principals to push online reach</li>
+				</ul>
+				<a href="http://otia.io/" target="_blank">Otia.io</a>
+		</div>
+
+
+		<div class="job">		
+			<h3 class="sub-title">National Public Radio and Television Station (WGBH) - Communications Intern</h3>
+			<div class="date-location">
+				<h4 class="date"><i class="material-icons">insert_invitation</i>January 2017 - May 2017</h4>
+				<h4 class="location">Boston, MA</h4>
+			</div>
+				<ul class="experience-list"> 
+					<li>Produced and marketed videos from beginning to end of life-cycle</li>
+					<li>Managed all website content including descriptions of videos and speakers; edited placeholders using Photoshop</li>
+					<li>Managed and tracked social media posts and responses to all content using Facebook, Twitter, and YouTube</li>	
+				</ul>
+				<a href="http://forum-network.org/" target="_blank">WGBH Forum Network</a>
+		</div>
+				
+
+		<div class="job">		
+			<h3 class="sub-title">Bowery Presents: Boston</h3>
+			<div class="date-location">
+				<h4 class="date"><i class="material-icons">insert_invitation</i>June 2016 - August 2016</h4>
+				<h4 class="location">Boston, MA</h4>
+			</div>
+				<ul class="experience-list"> 
+					<li>Created digital posters for artist promotion using Photoshop; Created online event pages</li>
+					<li>Promoted Bowery owned-and-operated venues and open-room concerts; Evaluated potential success of individual artists</li>
+					<li>Generated data to evaluate cost effectiveness of marketing campaigns; Organized and archived press materials</li>
+				</ul>	
+					<a href="https://www.boweryboston.com/" target="_blank">Bowery Boston</a>	
+		</div>
+	
+	</div>
+
+	<hr>
+		<h2 class="full-resume"><a href="Dylan Connor Resume 2017.pdf" target="_blank">Full Resume Here</a></h2>
+	
+	</div>
+
+
+
+	<div class="skills box">
+		<h1 class="title"><i class="material-icons">assessment</i>Skills</h1>
+			<hr>
+			<div class="box-container">
+
+				<h2 class="sub-title">General</h2>
+					<ul class="skills-list>">
+						<li>Copy Editing</li>
+						<li>Content Creation</li>
+						<li>Facebook Insights</li>
+						<li>Google Analytics</li>
+						<li>Audio Recording/Mixing</li>
+						<li>Video Production</li>
+					</ul>
+
+				<h2 class="sub-title">Software</h2>
+					<ul class="software-list>">
+						<li>Microsoft Office</li>
+						<li>Adobe Premiere Pro, Photoshop</li>
+						<li>Logic Pro</li>	
+						<li>WordPress, Basic PHP</li>
+						<li>Basic HTML, CSS</li>
+					</ul>
+
+			</div>
+	</div>
+
+		</div>
+		<!--End of Grid-->
+
+	<footer>
+
+		<a href="https://www.facebook.com/dconnor4" class="fa fa-facebook"></a>
+		<a href="https://www.linkedin.com/in/dylan-connor/" class="fa fa-linkedin"></a>
+		<a href="https://www.instagram.com/dylan_connor_/" class="fa fa-instagram"></a>
+		<a href="https://soundcloud.com/j-walls" class="fa fa-soundcloud"></a>
+
+	</footer>
+
+		</div>
+	<!--End of Container-->
+
+
+	</body>
+
+</html>
