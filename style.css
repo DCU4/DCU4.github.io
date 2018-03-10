@@ -8,37 +8,44 @@ html {
 /*'Comic Neue Angular'*/
 body {
 	background-color: #FFF;		
-	font-family:  'Roboto', sans-serif;
+	font-family: 'Avenir', 'Roboto', sans-serif;
 	font-weight: 500	
 }
+
 h1 {
 	color:black;
 	font-weight: 500;
 	font-size:2rem;
 }
-h2, h3{
-	font-weight: 400;
-	
+
+h2, h4{
+	font-weight: 400;	
 }
+
 h3 {
 	font-size: 1.25rem;
+	font-weight:500;
 }
+
 p {
 	font-size:1rem;
 	font-weight: 300;
 }
+
 a {
 	text-decoration: none;
-	color:var(--main-color);
-	
+	color:var(--main-color);	
 }
+
 a:hover {
 	filter: brightness(85%);
 }
+
 li {
 	list-style-type: square;
 	font-weight:  300;
 }
+
 /*Icons*/
 i {
 	color: var(--main-color);
@@ -73,7 +80,7 @@ i {
 	margin: 0 auto;
 	width: 100%;
 	display: grid;
-	grid-template-rows: 7.75fr 4fr;
+	grid-template-rows: 7.5fr 4fr;
 	grid-template-columns: 4fr 8fr;
 	grid-gap: 10px;
 	grid-template-areas:
